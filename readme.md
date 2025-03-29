@@ -5,6 +5,13 @@ This is myy fork of [Keychron QMK Firmware](https://github.com/Keychron/qmk_firm
 Keychron firmwares are in their relevant branches.
 For example, the [Q1 Max](https://github.com/schemar/qmk_firmware/tree/wireless_playground/keyboards/keychron/q1_max) firware is in the [wireless playground](https://github.com/schemar/qmk_firmware/tree/wireless_playground) branch.
 
+## Add a layer
+
+1. `keymaps/<keymap>/keymap.c`: add identifier to `enum layers`
+2. `keymaps/<keymap>/keymap.c`: add layer to `keymaps` array
+3. `keymaps/<keymap>/keymap.c`: add layer to `encoder_map` (at bottom)
+4. `config.h`: Update `#define DYNAMIC_KEYMAP_LAYER_COUNT` to the correct number of layers
+
 # Original Readme
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
