@@ -1,16 +1,23 @@
 # Quantum Mechanical Keyboard Firmware
 
+This is myy fork of [Keychron QMK Firmware](https://github.com/Keychron/qmk_firmware) which is a fork of [QMK Firmware](https://github.com/qmk/qmk_firmware)
+
+Keychron firmwares are in their relevant branches.
+For example, the [Q1 Max](https://github.com/schemar/qmk_firmware/tree/wireless_playground/keyboards/keychron/q1_max) firware is in the [wireless playground](https://github.com/schemar/qmk_firmware/tree/wireless_playground) branch.
+
+# Original Readme
+
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
 [![Discord](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
 [![Docs Status](https://img.shields.io/badge/docs-ready-orange.svg)](https://docs.qmk.fm)
 [![GitHub contributors](https://img.shields.io/github/contributors/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/pulse/monthly)
 [![GitHub forks](https://img.shields.io/github/forks/qmk/qmk_firmware.svg?style=social&label=Fork)](https://github.com/qmk/qmk_firmware/)
 
-This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the Clueboard product line.
+This is a keyboard firmware based on the [tmk_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the Clueboard product line.
 
 ## Documentation
 
-* [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
+- [See the official documentation on docs.qmk.fm](https://docs.qmk.fm)
 
 The docs are powered by [Docsify](https://docsify.js.org/) and hosted on [GitHub](/docs/). They are also viewable offline; see [Previewing the Documentation](https://docs.qmk.fm/#/contributing?id=previewing-the-documentation) for more details.
 
@@ -18,12 +25,12 @@ You can request changes by making a fork and opening a [pull request](https://gi
 
 ## Supported Keyboards
 
-* [Planck](/keyboards/planck/)
-* [Preonic](/keyboards/preonic/)
-* [ErgoDox EZ](/keyboards/ergodox_ez/)
-* [Clueboard](/keyboards/clueboard/)
-* [Cluepad](/keyboards/clueboard/17/)
-* [Atreus](/keyboards/atreus/)
+- [Planck](/keyboards/planck/)
+- [Preonic](/keyboards/preonic/)
+- [ErgoDox EZ](/keyboards/ergodox_ez/)
+- [Clueboard](/keyboards/clueboard/)
+- [Cluepad](/keyboards/clueboard/17/)
+- [Atreus](/keyboards/atreus/)
 
 The project also includes community support for [lots of other keyboards](/keyboards/).
 
