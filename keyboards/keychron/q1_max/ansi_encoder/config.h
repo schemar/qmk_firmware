@@ -16,10 +16,10 @@
 
 #pragma once
 
-#ifdef RGB_MATRIX_ENABLE
 /* Custom number of layers */
-#define DYNAMIC_KEYMAP_LAYER_COUNT 5
+# define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
+#ifdef RGB_MATRIX_ENABLE
 /* RGB Matrix driver configuration */
 #    define DRIVER_COUNT 2
 #    define RGB_MATRIX_LED_COUNT 81
