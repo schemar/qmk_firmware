@@ -19,6 +19,18 @@
 /* Custom number of layers */
 # define DYNAMIC_KEYMAP_LAYER_COUNT 5
 
+/* For Tapping Term Settings, see also https://docs.qmk.fm/features/tap_dance */
+
+/* The TAPPING_TERM time is the maximum time allowed between taps of your
+ * Tap Dance key, and is measured in milliseconds.
+ */
+#define TAPPING_TERM 175
+/* The TAPPING_TERM_PER_KEY definition is only needed if you control the
+ * tapping term through a custom get_tapping_term function, which may be
+ * needed because TAPPING_TERM affects not just tap-dance keys.
+ */
+#define TAPPING_TERM_PER_KEY
+
 /* Encoder Configuration */
 #define ENCODER_DEFAULT_POS 0x3
 #define ENCODER_MAP_KEY_DELAY 2
