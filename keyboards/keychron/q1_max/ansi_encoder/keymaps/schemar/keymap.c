@@ -25,6 +25,36 @@ enum layers {
     MOD1,
 };
 
+/* See also https://docs.qmk.fm/features/tap_dance */
+enum {
+    TD_CTL_HYP,
+};
+
+bool td_ctl_hyp_holding = false;
+
+void td_ctl_hyp_finished(tap_dance_state_t *state, void *user_data) {
+    // Act on first press, no need to check state->count.
+    if (state->pressed) {
+        // No need to check for state->interrupted, as we want a hold in
+        // that case.
+        register_code(KC_LCTL);
+        td_ctl_hyp_holding = true;
+    } else {
+        set_oneshot_mods(MOD_LCTL | MOD_LALT | MOD_LGUI | MOD_LSFT);
+        td_ctl_hyp_holding = false;
+    }
+};
+
+void td_ctl_hyp_reset(tap_dance_state_t *state, void *user_data) {
+    if (td_ctl_hyp_holding) {
+        unregister_code(KC_LCTL);
+    }
+};
+
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_CTL_HYP] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_ctl_hyp_finished, td_ctl_hyp_reset),
+};
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [MAC_BASE] = LAYOUT_ansi_82(
@@ -33,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,           KC_LBRC,  KC_RBRC,  KC_BSLS,            KC_PGDN,
 LT(MOD1, KC_ESC), KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,MT(MOD_LCTL,KC_SCLN),LT(MOD1, KC_QUOT),  KC_ENT,             KC_HOME,
         KC_LSFT,            KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,         KC_SLSH,            KC_RSFT,  KC_UP,
-        KC_LCTL,  KC_LOPTN, KC_LCMMD,                               KC_SPC,                                 KC_RCMMD,MO(MAC_FN),KC_RCTL,        KC_LEFT,  KC_DOWN,  KC_RGHT),
+TD(TD_CTL_HYP),   KC_LOPTN, KC_LCMMD,                               KC_SPC,                                 KC_RCMMD,MO(MAC_FN),KC_RCTL,        KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [MAC_FN] = LAYOUT_ansi_82(
         _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,            RGB_TOG,
