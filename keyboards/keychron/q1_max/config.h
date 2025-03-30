@@ -16,6 +16,9 @@
 
 #pragma once
 
+/* Custom number of layers */
+# define DYNAMIC_KEYMAP_LAYER_COUNT 5
+
 /* Encoder Configuration */
 #define ENCODER_DEFAULT_POS 0x3
 #define ENCODER_MAP_KEY_DELAY 2
