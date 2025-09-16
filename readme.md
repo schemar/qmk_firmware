@@ -5,6 +5,21 @@ This is myy fork of [Keychron QMK Firmware](https://github.com/Keychron/qmk_firm
 Keychron firmwares are in their relevant branches.
 For example, the [Q1 Max](https://github.com/schemar/qmk_firmware/tree/wireless_playground/keyboards/keychron/q1_max) firware is in the [wireless playground](https://github.com/schemar/qmk_firmware/tree/wireless_playground) branch.
 
+## Setup on a new macOS
+
+1. `qmk setup -H ~/Projects/qmk_firmware schemar/qmk_firmware`
+    - It's important that the initial setup is done on the `master` branch. Otherwise installing dependencies with `brew` will fail.
+2. `cd ~/Projects/qmk_firmware`
+3. `git remote set-url origin git@github.com:schemar/qmk_firmware.git`
+4. `git switch wireless_playground`
+5. `qmk setup -H ~/Projects/qmk_firmware schemar/qmk_firmware`
+    - Setup again to install brew dependencies for the current branch.
+6. `/opt/homebrew/Cellar/qmk/1.1.8/libexec/bin/python -m pip install -r /Users/schemar/Projects/qmk_firmware/requirements.txt`
+    - Python dependencies.
+    - If you skip this, `just build` should list this.
+7. `just build`
+    - Should work now.
+
 ## Add a layer
 
 1. `keymaps/<keymap>/keymap.c`: add identifier to `enum layers`
