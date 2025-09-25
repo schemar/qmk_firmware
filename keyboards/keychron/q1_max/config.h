@@ -30,6 +30,12 @@
  * needed because TAPPING_TERM affects not just tap-dance keys.
  */
 #define TAPPING_TERM_PER_KEY
+/* Enable rapid switch from tap to hold. Disables double tap hold auto-repeat. */
+#define QUICK_TAP_TERM 0
+/* Permissive Hold: Tap-Hold keys prioritize the hold when another key is tapped
+ * during the tapping term.
+ */
+#define PERMISSIVE_HOLD
 
 /* Encoder Configuration */
 #define ENCODER_DEFAULT_POS 0x3
