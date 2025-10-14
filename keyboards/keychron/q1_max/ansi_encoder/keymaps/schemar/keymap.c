@@ -117,7 +117,7 @@ TD(TD_CTL_HYP),   KC_LOPTN, KC_LCMMD,                               KC_SPC,     
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     // Knob behavior:
-    [MAC_BASE] = {ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN)},
+    [MAC_BASE] = {ENCODER_CCW_CW(KC_MS_WH_DOWN, KC_MS_WH_UP)},
     [MAC_FN]   = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
     [WIN_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [WIN_FN]   = {ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
