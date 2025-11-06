@@ -17,7 +17,7 @@
 #pragma once
 
 /* Custom number of layers */
-# define DYNAMIC_KEYMAP_LAYER_COUNT 5
+# define DYNAMIC_KEYMAP_LAYER_COUNT 7
 
 /* For Tapping Term Settings, see also https://docs.qmk.fm/features/tap_dance */
 
