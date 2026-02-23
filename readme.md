@@ -20,6 +20,12 @@ For example, the [Q1 Max](https://github.com/schemar/qmk_firmware/tree/wireless_
 7. `just build`
     - Should work now.
 
+## Setup on Linux
+
+1. `echo "use flake" > .envrc`
+2. `direnv allow`
+3. Check output of `qmk doctor` (e.g. `udev` rules)
+
 ## Add a layer
 
 1. `keymaps/<keymap>/keymap.c`: add identifier to `enum layers`
