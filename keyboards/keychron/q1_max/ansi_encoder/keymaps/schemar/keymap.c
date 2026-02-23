@@ -63,29 +63,29 @@ tap_dance_action_t tap_dance_actions[] = {
 #define MOD_ESC LT(MOD1, KC_ESC) // Mod layer when held, ESC when tapped.
 // Home Row
 // Left hand
-#define HOME_ZC MT(MOD_LCTL, KC_Z)
-#define HOME_ZG MT(MOD_LGUI, KC_Z)
-#define HOME_X MT(MOD_LALT, KC_X)
-#define HOME_C MT(MOD_LSFT, KC_C)
-#define HOME_VC MT(MOD_LCTL, KC_V)
-#define HOME_VG MT(MOD_LGUI, KC_V)
+#define MOD_ZC MT(MOD_LCTL, KC_Z)
+#define MOD_ZG MT(MOD_LGUI, KC_Z)
+#define MOD_X MT(MOD_LALT, KC_X)
+#define MOD_C MT(MOD_LSFT, KC_C)
+#define MOD_VC MT(MOD_LCTL, KC_V)
+#define MOD_VG MT(MOD_LGUI, KC_V)
 // Right hand
-#define HOME_NC MT(MOD_RCTL, KC_N)
-#define HOME_NG MT(MOD_RGUI, KC_N)
-#define HOME_M MT(MOD_RSFT, KC_M)
-#define HOME_COMM MT(MOD_LALT, KC_COMM) // Using LALT for better compatibility.
-#define HOME_DOTC MT(MOD_RCTL, KC_DOT)
-#define HOME_DOTG MT(MOD_RGUI, KC_DOT)
+#define MOD_MC MT(MOD_RCTL, KC_M)
+#define MOD_MG MT(MOD_RGUI, KC_M)
+#define MOD_COMM MT(MOD_RSFT, KC_COMM)
+#define MOD_DOT MT(MOD_LALT, KC_DOT) // Using LALT for better compatibility.
+#define MOD_SLHC MT(MOD_RCTL, KC_SLSH)
+#define MOD_SLHG MT(MOD_RGUI, KC_SLSH)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  [MAC_BASE] = LAYOUT_ansi_82(
-        KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,   KC_VOLU,  KC_DEL,             KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,   KC_EQL,   KC_BSPC,            KC_PGUP,
-        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,   KC_RBRC,  KC_BSLS,            KC_PGDN,
-        MOD_ESC,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,   KC_ENT,                       KC_HOME,
-        KC_LSFT,            HOME_ZC,  HOME_X,   HOME_C,   HOME_VG,  KC_B,     HOME_NG,  HOME_M,   HOME_COMM,HOME_DOTC,KC_SLSH,   KC_RSFT,            KC_UP,
-TD(TD_CTL_HYP),   KC_LOPTN, KC_LCMMD,                               KC_SPC,                                 KC_RCMMD, MO(MAC_FN),KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE, KC_VOLD,   KC_VOLU,  KC_DEL,             KC_MUTE,
+        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,    KC_MINS,   KC_EQL,   KC_BSPC,            KC_PGUP,
+        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,    KC_LBRC,   KC_RBRC,  KC_BSLS,            KC_PGDN,
+        MOD_ESC,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN, KC_QUOT,   KC_ENT,                       KC_HOME,
+        KC_LSFT,            MOD_ZC,   MOD_X,    MOD_C,    MOD_VG,  KC_B,     KC_N,      MOD_MG,   MOD_COMM, MOD_DOT, MOD_SLHC, KC_RSFT,            KC_UP,
+TD(TD_CTL_HYP),   KC_LOPTN, KC_LCMMD,                               KC_SPC,                                 KC_RCMMD,MO(MAC_FN),KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [MAC_FN] = LAYOUT_ansi_82(
         _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,            RGB_TOG,
@@ -96,12 +96,12 @@ TD(TD_CTL_HYP),   KC_LOPTN, KC_LCMMD,                               KC_SPC,     
         _______,  _______,  _______,                                _______,                                _______,  _______,  _______,  _______,  _______,  _______),
 
     [WIN_BASE] = LAYOUT_ansi_82(
-        KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,   KC_VOLU,  KC_DEL,             KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,   KC_EQL,   KC_BSPC,            KC_PGUP,
-        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,   KC_RBRC,  KC_BSLS,            KC_PGDN,
-        MOD_ESC,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,   KC_ENT,                       KC_HOME,
-        KC_LSFT,            HOME_ZG,  HOME_X,   HOME_C,   HOME_VC,  KC_B,     HOME_NC,  HOME_M,   HOME_COMM,HOME_DOTG,KC_SLSH,   KC_RSFT,            KC_UP,
-        KC_LCTL,  KC_LGUI,  KC_LALT,                                KC_SPC,                                 KC_RALT,  MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE, KC_VOLD,   KC_VOLU,  KC_DEL,             KC_MUTE,
+        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,    KC_MINS,   KC_EQL,   KC_BSPC,            KC_PGUP,
+        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,    KC_LBRC,   KC_RBRC,  KC_BSLS,            KC_PGDN,
+        MOD_ESC,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN, KC_QUOT,   KC_ENT,                       KC_HOME,
+        KC_LSFT,            MOD_ZG,   MOD_X,    MOD_C,    MOD_VC,  KC_B,     KC_N,      MOD_MC,   MOD_COMM, MOD_DOT, MOD_SLHG, KC_RSFT,            KC_UP,
+        KC_LCTL,  KC_LGUI,  KC_LALT,                                KC_SPC,                                 KC_RALT, MO(WIN_FN),KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [WIN_FN] = LAYOUT_ansi_82(
         _______,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   _______,            RGB_TOG,
